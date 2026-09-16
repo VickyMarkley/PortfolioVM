@@ -1,10 +1,22 @@
-	<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <!--
 	Hyperspace by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+<head>
+	<title>Portfolio 1</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+	<!-- REQUIRED VEGA DEPENDENCIES -->
+	<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+	<script src="https://jsdelivr.net"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
 	<style id="vega-tooltip-style">
 		#vg-tooltip-element	{
 			visibility: hidden;
@@ -55,121 +67,194 @@
 			color: #bfbfbf;
 		}
 	</style>
-	<title>Portfolio 1</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	<style id="vega-embed-style"></style>
-	<body class="is-preload">
-		<!-- Header -->
-			<header id="header">
-				<a href="index.html" class="title">Vicky's Portfolio</a>
-				<nav>
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="generic.html" class="active">Generic</a></li>
-						<li><a href="elements.html">Elements</a></li>
-					</ul>
-				</nav>
-			</header>
+</head>
+<body class="is-preload">
+<!-- Header -->
+<header id="header">
+	<a href="index.html" class="title">Vicky's Portfolio</a>
+	<nav>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="generic.html" class="active">Generic</a></li>
+			<li><a href="elements.html">Elements</a></li>
+		</ul>
+	</nav>
+</header>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<!-- Wrapper -->
+<div id="wrapper">
+	<!-- Main -->
+	<section id="main" class="wrapper">
+		<div class="inner">
+			<h1 class="major">Titanic Passenger Survival Analysis</h1>
 
-				<!-- Main -->
-					<section id="main" class="wrapper">
-						<div class="inner">
-							<h1 class="major">Titanic Passenger Survival Analysis by Passenger Class and Gender</h1>
-							<div id="vis"></div>
-						</div>
+			<!-- UPDATED: Added individual containers for each chart -->
+			<h3>Vertical Survival Rate by Class & Gender</h3>
+			<div id="vis1" style="margin-bottom: 3rem;"></div>
 
-					</section>
-			</div>
+			<h3>Horizontal Survival Rate by Class & Gender</h3>
+			<div id="vis2" style="margin-bottom: 3rem;"></div>
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
+			<h3>Number of Passengers by Class & Gender</h3>
+			<div id="vis3" style="margin-bottom: 3rem;"></div>
 
-		<!-- Scripts -->
+			<h3>Normalized Stacked Survival Breakdown</h3>
+			<div id="vis4" style="margin-bottom: 3rem;"></div>
+		</div>
+	</section>
+</div>
 
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-		
-		<!-- Vega Lite Charts -->
-			<script type="text/javascript">
-   			 var chart1 = {
-        		"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-       		 "description": "Vertical Survival Rate by Passenger Class and Gender",
-       		 "data": {
-         		   "url": "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv"
-      		  },
-       		 "mark": "bar",
-       		 "encoding": {
-        		    "x": {"field": "Pclass", "type": "ordinal", "title": "Passenger Class"},
-       		     	"y": {
-          		    	"field": "Survived",
-                		"type": "quantitative",
-                		"aggregate": "mean",
-                		"title": "Survival Rate",
-                		"axis": {"format": "%"}
-            		},
-            		"color": {
-                		"field": "Sex",
-               	 		"type": "nominal",
-                		"title": "Gender",
-                		"scale": {"domain": ["female", "male"]}
-            		},
-            		"xOffset": {"field": "Sex"}
-        		},
-				"width": 700,
-  				"height":500
-    		};
+<!-- Footer -->
+<footer id="footer" class="wrapper alt">
+	<div class="inner">
+		<ul class="menu">
+			<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+		</ul>
+	</div>
+</footer>
 
-				var chart2 = {
-  					"$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  				"description": "Horizontal Survival Rate by Passenger Class and Gender",
- 				 "data": {
-    		"url": "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv"
- 			 },
-  		"mark": "bar",
-  		"encoding": {
-    		"y": {"field": "Pclass", "type": "ordinal", "title": "Passenger Class"},
-    		"x": {
-      			"field": "Survived",
-      			"type": "quantitative",
-      			"aggregate": "mean",
-      			"title": "Survival Rate",
-     			"axis": {"format": "%"}
-    		},
-    		"color": {
-      			"field": "Sex",
-      			"type": "nominal",
-      			"title": "Gender",
-      			"scale": {"domain": ["female", "male"], "range": ["#5B5941", "#afc2d5"]}
-    		},
-    		"yOffset": {"field": "Sex"}
-  		},
-			"width": 700,
-  			"height":500
-		}
+<!-- Template Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
 
-			 var chart3 = {}
-			 var chart4 = {}
-			 vegaEmbed('#vis1', chart1);
-			 vegaEmbed('#vis2', chart2);
-			 vegaEmbed('#vis3', chart3);
-			 vegaEmbed('#vis4', chart4);
-			</script>
-		</body>
-	</html>
+<!-- Vega Lite Charts Definition and Embedding -->
+<script type="text/javascript">
+	var chart1 = {
+		"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+		"description": "Vertical Survival Rate by Passenger Class and Gender",
+		"data": { "url": "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv" },
+		"mark": "bar",
+		"encoding": {
+			"x": {"field": "Pclass", "type": "ordinal", "title": "Passenger Class"},
+			"y": {
+				"field": "Survived",
+				"type": "quantitative",
+				"aggregate": "mean",
+				"title": "Survival Rate",
+				"axis": {"format": "%"}
+			},
+			"color": {
+				"field": "Sex",
+				"type": "nominal",
+				"title": "Gender",
+				"scale": {"domain": ["female", "male"]}
+			},
+			"xOffset": {"field": "Sex"}
+		},
+		"width": 700,
+		"height": 500
+	};
+
+	var chart2 = {
+		"$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+		"description": "Horizontal Survival Rate by Passenger Class and Gender",
+		"data": { "url": "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv" },
+		"mark": "bar",
+		"encoding": {
+			"y": {"field": "Pclass", "type": "ordinal", "title": "Passenger Class"},
+			"x": {
+				"field": "Survived",
+				"type": "quantitative",
+				"aggregate": "mean",
+				"title": "Survival Rate",
+				"axis": {"format": "%"}
+			},
+			"color": {
+				"field": "Sex",
+				"type": "nominal",
+				"title": "Gender",
+				"scale": {"domain": ["female", "male"], "range": ["#5B5941", "#afc2d5"]}
+			},
+			"yOffset": {"field": "Sex"}
+		},
+		"width": 700,
+		"height": 500
+	};
+
+	var chart3 = {
+		"$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+		"data": { "url": "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv" },
+		"mark": "bar",
+		"encoding": {
+			"x": {"field": "Pclass", "type": "nominal", "title": "Passenger Class"},
+			"y": {
+				"aggregate": "count",
+				"type": "quantitative",
+				"title": "Number of Passengers"
+			},
+			"color": {
+				"field": "Sex",
+				"type": "nominal",
+				"scale": {"domain": ["female", "male"], "range": ["#c1121f", "#fdc500"]},
+				"title": "Sex"
+			}
+		},
+		"width": 700,
+		"height": 500
+	};
+
+	var chart4 = {
+		"$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+		"data": { "url": "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv" },
+		"encoding": {
+			"y": {"field": "Pclass", "type": "ordinal", "title": "Passenger Class"}
+		},
+		"layer": [
+			{
+				"mark": "bar",
+				"encoding": {
+					"x": {
+						"aggregate": "mean",
+						"field": "Survived",
+						"type": "quantitative",
+						"title": "Survival Rate",
+						"stack": "normalize",
+						"axis": {"format": "%"}
+					},
+					"color": {
+						"field": "Sex",
+						"type": "nominal",
+						"scale": {
+							"domain": ["female", "male"],
+							"range": ["#c1121f", "#BDBF09"]
+						},
+						"title": "Gender"
+					}
+				}
+			},
+			{
+				"mark": {"type": "text", "opacity": 0.9, "color": "white"},
+				"encoding": {
+					"x": {
+						"aggregate": "mean",
+						"field": "Survived",
+						"type": "quantitative",
+						"stack": "normalize"
+					},
+					"text": {
+						"aggregate": "mean",
+						"field": "Survived",
+						"type": "quantitative",
+						"format": ".1%"
+					},
+					"detail": {"field": "Sex"}
+				}
+			}
+		],
+		"width": 700,
+		"height": 500
+	};
+
+	// Execute the renders
+	vegaEmbed('#vis1', chart1);
+	vegaEmbed('#vis2', chart2);
+	vegaEmbed('#vis3', chart3);
+	vegaEmbed('#vis4', chart4);
+</script>
+</body>
+</html>
