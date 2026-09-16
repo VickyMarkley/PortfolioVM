@@ -249,12 +249,15 @@
 		"width": 700,
 		"height": 500
 	};
-
+ 	<script type="text/javascript">
+    // This wrapper forces the browser to wait until the HTML elements are fully loaded
+    document.addEventListener("DOMContentLoaded", function() {
 	// Execute the renders
-	vegaEmbed('#vis1', chart1);
-	vegaEmbed('#vis2', chart2);
-	vegaEmbed('#vis3', chart3);
-	vegaEmbed('#vis4', chart4);
+		vegaEmbed('#vis1', chart1);
+		vegaEmbed('#vis2', chart2);
+		vegaEmbed('#vis3', chart3);
+		vegaEmbed('#vis4', chart4);
+	 });
 </script>
 </body>
 </html>
