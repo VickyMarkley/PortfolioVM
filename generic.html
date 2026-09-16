@@ -128,7 +128,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "Vertical Survival Rate by Passenger Class and Gender",
     "data": { "url": "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv" },
-    "mark": "bar",
+    "mark": "bar", "tooltip": true,
     "encoding": {
       "x": { "field": "Pclass", "type": "ordinal", "title": "Passenger Class" },
       "y": { "field": "Survived", "type": "quantitative", "aggregate": "mean", "title": "Survival Rate", "axis": { "format": "%" } },
@@ -143,7 +143,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "Horizontal Survival Rate by Passenger Class and Gender",
     "data": { "url": "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv" },
-    "mark": "bar",
+    "mark": "bar", "tooltip": true,
     "encoding": {
       "y": { "field": "Pclass", "type": "ordinal", "title": "Passenger Class" },
       "x": { "field": "Survived", "type": "quantitative", "aggregate": "mean", "title": "Survival Rate", "axis": { "format": "%" } },
@@ -157,7 +157,7 @@
   var chart3 = {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": { "url": "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv" },
-    "mark": "bar",
+    "mark": "bar", "tooltip": true,
     "encoding": {
       "x": { "field": "Pclass", "type": "nominal", "title": "Passenger Class" },
       "y": { "aggregate": "count", "type": "quantitative", "title": "Number of Passengers" },
@@ -175,7 +175,7 @@
     },
     "layer": [
       {
-        "mark": "bar",
+        "mark": "bar", "tooltip": true,
         "encoding": {
           "x": { "aggregate": "mean", "field": "Survived", "type": "quantitative", "title": "Survival Rate", "stack": "normalize", "axis": { "format": "%" } },
           "color": { "field": "Sex", "type": "nominal", "scale": { "domain": ["female", "male"], "range": ["#c1121f", "#BDBF09"] }, "title": "Gender" }
