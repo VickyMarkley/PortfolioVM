@@ -5,9 +5,63 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<body class="is-preload">
-
+	<style id="vega-tooltip-style">
+		#vg-tooltip-element	{
+			visibility: hidden;
+			padding: 8px;
+			position: fixed;
+			z-index: 1000;
+			font-family: sans-serif;
+			font-size: 11px;
+			border-radius: 3px;
+			box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+			background-color: rgb(255 255 255);
+			border: 1px solid #d9d9d9;
+			color: black;
+		}
+		#vg-tooltip-element.visible {
+			visibility: visible;
+		}
+		#vg-tooltip-element h2 {
+			margin-top: 0;
+			margin-bottom: 10px;
+			font-size: 13px;
+		}
+		#vg-tooltip-element table {
+			border-spacing: 0;
+		}
+		#vg-tooltip-element table tr {
+			border: none;
+		}
+		#vg-tooltip-element table tr td {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			padding-top: 2px;
+			padding-bottom: 2px;
+		}
+		#vg-tooltip-element table tr td.key {
+			color: #808080;
+			max-width: 150px;
+			text-align: right;
+			padding-right: 4px;
+		}
+		#vg-tooltip-element table tr td.value {
+			display: block;
+			max-width: 300px;
+			max-height: 7em;
+			text-align: left;
+		}
+		#vg-tooltip-element.dark-theme td.key {
+			color: #bfbfbf;
+		}
+	</style>
+	<title>Portfolio 1</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<style id="vega-embed-style"></style>
+	<body class="is-preload">
 		<!-- Header -->
 			<header id="header">
 				<a href="index.html" class="title">Vicky's Portfolio</a>
@@ -29,6 +83,7 @@
 							<h1 class="major">Titanic Passenger Survival Analysis by Passenger Class and Gender</h1>
 							<div id="vis"></div>
 						</div>
+
 					</section>
 			</div>
 
@@ -109,8 +164,12 @@
   			"height":500
 		}
 
-    		vegaEmbed('#vis', chart1);
+			 var chart3 = {}
+			 var chart4 = {}
+			 vegaEmbed('#vis1', chart1);
+			 vegaEmbed('#vis2', chart2);
+			 vegaEmbed('#vis3', chart3);
+			 vegaEmbed('#vis4', chart4);
 			</script>
 		</body>
-	</head>		
-</html>
+	</html>
