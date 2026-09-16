@@ -135,7 +135,7 @@
       "color": { "field": "Sex", "type": "nominal", "title": "Gender", "scale": { "domain": ["female", "male"] } },
       "xOffset": { "field": "Sex" }
     },
-    "width": 700,
+    "width": 800,
     "height": 500
   };
 
@@ -150,7 +150,7 @@
       "color": { "field": "Sex", "type": "nominal", "title": "Gender", "scale": { "domain": ["female", "male"], "range": ["#5B5941", "#afc2d5"] } },
       "yOffset": { "field": "Sex" }
     },
-    "width": 700,
+    "width": 800,
     "height": 500
   };
 
@@ -163,7 +163,7 @@
       "y": { "aggregate": "count", "type": "quantitative", "title": "Number of Passengers" },
       "color": { "field": "Sex", "type": "nominal", "scale": { "domain": ["female", "male"], "range": ["#c1121f", "#fdc500"] }, "title": "Sex" }
     },
-    "width": 700,
+    "width": 800,
     "height": 500
   };
 
@@ -190,10 +190,15 @@
         }
       }
     ],
-    "width": 700,
+    "width": 800,
     "height": 500
   };
 
+	const embedOpts = {
+  		actions: true,
+  		tooltip: true 
+	};
+	
   document.addEventListener("DOMContentLoaded", function () {
     vegaEmbed('#vis1', chart1);
     vegaEmbed('#vis2', chart2);
