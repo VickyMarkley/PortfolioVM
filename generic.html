@@ -22,14 +22,14 @@
 			visibility: hidden;
 			padding: 8px;
 			position: fixed;
-			z-index: 1000;
+			z-index: 9999 !important;
 			font-family: sans-serif;
 			font-size: 11px;
 			border-radius: 3px;
 			box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-			background-color: rgb(255 255 255);
+			background-color: #ffffff !important;
 			border: 1px solid #d9d9d9;
-			color: black;
+			color: #333333 !important;
 		}
 		#vg-tooltip-element.visible {
 			visibility: visible;
@@ -46,6 +46,7 @@
 			border: none;
 		}
 		#vg-tooltip-element table tr td {
+			color: #333333 !important;
 			overflow: hidden;
 			text-overflow: ellipsis;
 			padding-top: 2px;
@@ -133,7 +134,12 @@
       "x": { "field": "Pclass", "type": "ordinal", "title": "Passenger Class" },
       "y": { "field": "Survived", "type": "quantitative", "aggregate": "mean", "title": "Survival Rate", "axis": { "format": "%" } },
       "color": { "field": "Sex", "type": "nominal", "title": "Gender", "scale": { "domain": ["female", "male"] } },
-      "xOffset": { "field": "Sex" }
+      "xOffset": { "field": "Sex" },
+	"tooltip": [
+    	{ "field": "Pclass", "type": "ordinal", "title": "Class" },
+    	{ "field": "Sex", "type": "nominal", "title": "Gender" },
+    	{ "field": "Survived", "type": "quantitative", "aggregate": "mean", "title": "Survival Rate", "format": ".1%" }
+  		]
     },
     "width": 800,
     "height": 500
@@ -148,7 +154,12 @@
       "y": { "field": "Pclass", "type": "ordinal", "title": "Passenger Class" },
       "x": { "field": "Survived", "type": "quantitative", "aggregate": "mean", "title": "Survival Rate", "axis": { "format": "%" } },
       "color": { "field": "Sex", "type": "nominal", "title": "Gender", "scale": { "domain": ["female", "male"], "range": ["#5B5941", "#afc2d5"] } },
-      "yOffset": { "field": "Sex" }
+      "yOffset": { "field": "Sex" },
+	"tooltip": [
+    	{ "field": "Pclass", "type": "ordinal", "title": "Class" },
+    	{ "field": "Sex", "type": "nominal", "title": "Gender" },
+    	{ "field": "Survived", "type": "quantitative", "aggregate": "mean", "title": "Survival Rate", "format": ".1%" }
+  		]
     },
     "width": 800,
     "height": 500
@@ -161,7 +172,12 @@
     "encoding": {
       "x": { "field": "Pclass", "type": "nominal", "title": "Passenger Class" },
       "y": { "aggregate": "count", "type": "quantitative", "title": "Number of Passengers" },
-      "color": { "field": "Sex", "type": "nominal", "scale": { "domain": ["female", "male"], "range": ["#c1121f", "#fdc500"] }, "title": "Sex" }
+      "color": { "field": "Sex", "type": "nominal", "scale": { "domain": ["female", "male"], "range": ["#c1121f", "#fdc500"] }, "title": "Sex" },
+	"tooltip": [
+    	{ "field": "Pclass", "type": "nominal", "title": "Class" },
+    	{ "field": "Sex", "type": "nominal", "title": "Gender" },
+    	{ "aggregate": "count", "type": "quantitative", "title": "Count" }
+  		]
     },
     "width": 800,
     "height": 500
@@ -175,7 +191,7 @@
     },
     "layer": [
       {
-        "mark": "bar", "tooltip": true,
+        "mark": { "type": "bar", "tooltip": true },
         "encoding": {
           "x": { "aggregate": "mean", "field": "Survived", "type": "quantitative", "title": "Survival Rate", "stack": "normalize", "axis": { "format": "%" } },
           "color": { "field": "Sex", "type": "nominal", "scale": { "domain": ["female", "male"], "range": ["#c1121f", "#BDBF09"] }, "title": "Gender" }
