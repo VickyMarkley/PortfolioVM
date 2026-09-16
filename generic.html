@@ -199,12 +199,12 @@
   		tooltip: true 
 	};
 	
-  document.addEventListener("DOMContentLoaded", function () {
-    vegaEmbed('#vis1', chart1);
-    vegaEmbed('#vis2', chart2);
-    vegaEmbed('#vis3', chart3);
-    vegaEmbed('#vis4', chart4);
-  });
+	document.addEventListener("DOMContentLoaded", function () {
+ 		vegaEmbed('#vis1', chart1, embedOpts);
+  		vegaEmbed('#vis2', chart2, embedOpts);
+  		vegaEmbed('#vis3', chart3, embedOpts);
+ 		vegaEmbed('#vis4', chart4, embedOpts);
+	});
 </script>
 </body>
 </html>
