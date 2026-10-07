@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+	<title>Portfolio 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+	<style id="vega-tooltip-style">
+		#vg-tooltip-element	{
+			visibility: hidden;
+			padding: 8px;
+			position: fixed;
+			z-index: 9999 !important;
+			font-family: sans-serif;
+			font-size: 11px;
+			border-radius: 3px;
+			box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+			background-color: #ffffff !important;
+			border: 1px solid #d9d9d9;
+			color: #333333 !important;
+		}
+		#vg-tooltip-element.visible {
+			visibility: visible;
+		}
+		#vg-tooltip-element table {
+			border-spacing: 0;
+		}
+		#vg-tooltip-element table tr {
+			border: none;
+		}
+		#vg-tooltip-element table tr td {
+			color: #333333 !important;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			padding-top: 2px;
+			padding-bottom: 2px;
+		}
+		#vg-tooltip-element table tr td.key {
+			color: #808080;
+			max-width: 150px;
+			text-align: right;
+			padding-right: 4px;
+		}
+		#vg-tooltip-element table tr td.value {
+			display: block;
+			max-width: 300px;
+			max-height: 7em;
+			text-align: left;
+		}
+	</style>
+</head>
+<body class="is-preload">
+<!-- Header -->
+<header id="header">
+	<a href="index.html" class="title">Vicky's Portfolio</a>
+	<nav>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="generic.html" class="active">Generic</a></li>
+			<li><a href="elements.html">Elements</a></li>
+		</ul>
+	</nav>
+</header>
+
+<!-- Wrapper -->
+<!-- Assignment 2 Section -->
+<section id="main" class="wrapper">
+    <div class="inner">
+        <h1 class="major">Assignment 2</h1>
+        <p>Trends in the numbers of cocaine-related presentations in Euro-DEN Plus sentinel hospitals 2023 to 2024.</p>
+        
+        <!-- Tableau Embed Container -->
+        <!-- Tableau Embed Container -->
+    <div class='tableauPlaceholder' id='viz1791344888303' style='position: relative; width: 100%;'>
+      <noscript>
+        <a href='#'>
+            <img alt='Trends in the numbers of cocaine-related presentations in Euro-DEN Plus sentinel hospitals, 2023 to 2024 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Po&#47;PortfolioGraph2&#47;Sheet1&#47;1_rss.png' style='border: none' />
+        </a>
+    </noscript>
+    <object class='tableauViz' style='display:none;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='embed_code_version' value='3' />
+        <param name='site_root' value='' />
+        <param name='name' value='PortfolioGraph2&#47;Sheet1' />
+        <param name='tabs' value='no' />
+        <param name='toolbar' value='yes' />
+        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Po&#47;PortfolioGraph2&#47;Sheet1&#47;1.png' />
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' />
+        <param name='language' value='en-US' />
+    </object>
+</div>
+<script type='text/javascript'>
+    var divElement = document.getElementById('viz1791344888303');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    vizElement.style.width = '100%';
+    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer" class="wrapper alt">
+	<div class="inner">
+		<ul class="menu">
+			<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+		</ul>
+	</div>
+</footer>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+<script type="text/javascript">
+  var chart1 = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Vertical Survival Rate by Passenger Class and Gender",
+    "data": { "url": "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv" },
+    "mark": "bar", "tooltip": true,
+    "encoding": {
+      "x": { "field": "Pclass", "type": "ordinal", "title": "Passenger Class" },
+      "y": { "field": "Survived", "type": "quantitative", "aggregate": "mean", "title": "Survival Rate", "axis": { "format": "%" } },
+      "color": { "field": "Sex", "type": "nominal", "title": "Gender", "scale": { "domain": ["female", "male"] } },
+      "xOffset": { "field": "Sex" },
+	"tooltip": [
+    	{ "field": "Pclass", "type": "ordinal", "title": "Class" },
+    	{ "field": "Sex", "type": "nominal", "title": "Gender" },
+    	{ "field": "Survived", "type": "quantitative", "aggregate": "mean", "title": "Survival Rate", "format": ".1%" }
+  		]
+    },
+    "width": 800,
+    "height": 500
+  };
+
+  var chart2 = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Horizontal Survival Rate by Passenger Class and Gender",
+    "data": { "url": "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv" },
+    "mark": "bar", "tooltip": true,
+    "encoding": {
+      "y": { "field": "Pclass", "type": "ordinal", "title": "Passenger Class" },
+      "x": { "field": "Survived", "type": "quantitative", "aggregate": "mean", "title": "Survival Rate", "axis": { "format": "%" } },
+      "color": { "field": "Sex", "type": "nominal", "title": "Gender", "scale": { "domain": ["female", "male"], "range": ["#5B5941", "#afc2d5"] } },
+      "yOffset": { "field": "Sex" },
+	"tooltip": [
+    	{ "field": "Pclass", "type": "ordinal", "title": "Class" },
+    	{ "field": "Sex", "type": "nominal", "title": "Gender" },
+    	{ "field": "Survived", "type": "quantitative", "aggregate": "mean", "title": "Survival Rate", "format": ".1%" }
+  		]
+    },
+    "width": 800,
+    "height": 500
+  };
+
+  var chart3 = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": { "url": "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv" },
+    "mark": "bar", "tooltip": true,
+    "encoding": {
+      "x": { "field": "Pclass", "type": "nominal", "title": "Passenger Class" },
+      "y": { "aggregate": "count", "type": "quantitative", "title": "Number of Passengers" },
+      "color": { "field": "Sex", "type": "nominal", "scale": { "domain": ["female", "male"], "range": ["#c1121f", "#fdc500"] }, "title": "Sex" },
+	"tooltip": [
+    	{ "field": "Pclass", "type": "nominal", "title": "Class" },
+    	{ "field": "Sex", "type": "nominal", "title": "Gender" },
+    	{ "aggregate": "count", "type": "quantitative", "title": "Count" }
+  		]
+    },
+    "width": 800,
+    "height": 500
+  };
+
+  var chart4 = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": { "url": "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv" },
+    "encoding": {
+      "y": { "field": "Pclass", "type": "ordinal", "title": "Passenger Class" }
+    },
+    "layer": [
+      {
+        "mark": { "type": "bar", "tooltip": true },
+        "encoding": {
+          "x": { "aggregate": "mean", "field": "Survived", "type": "quantitative", "title": "Survival Rate", "stack": "normalize", "axis": { "format": "%" } },
+          "color": { "field": "Sex", "type": "nominal", "scale": { "domain": ["female", "male"], "range": ["#c1121f", "#BDBF09"] }, "title": "Gender" }
+        }
+      },
+      {
+        "mark": { "type": "text", "opacity": 0.9, "color": "white" },
+        "encoding": {
+          "x": { "aggregate": "mean", "field": "Survived", "type": "quantitative", "stack": "normalize" },
+          "text": { "aggregate": "mean", "field": "Survived", "type": "quantitative", "format": ".1%" },
+          "detail": { "field": "Sex" }
+        }
+      }
+    ],
+    "width": 800,
+    "height": 500
+  };
+
+	const embedOpts = {
+  		actions: true,
+  		tooltip: true 
+	};
+	
+	document.addEventListener("DOMContentLoaded", function () {
+ 		vegaEmbed('#vis1', chart1, embedOpts);
+  		vegaEmbed('#vis2', chart2, embedOpts);
+  		vegaEmbed('#vis3', chart3, embedOpts);
+ 		vegaEmbed('#vis4', chart4, embedOpts);
+	});
+</script>
+</body>
+</html>
